@@ -4,7 +4,7 @@ package SF_form_secure;
 
  By: $|-|4X4_|=73}{ N.K.A (sflex@cpan.org)
  File: SF_form_secure.pm
- Version: 2.1 10/22/2006 08:53:47
+ Version: 2.0 10/22/2006 10:30:55
 
  This file is a Perl Module.
 
@@ -19,7 +19,7 @@ package SF_form_secure;
  Data integrity of link and referer data.
  Good URL anti-tampering methods.
  Must Provide a secret key.
- Controle the expiration funtion and minutes used 1 to 99, blank is off.
+ Controle the time stamp funtion and minutes used 1 to 99, blank is off.
  Can use Remote IP in encoding.
  Many security level Combos 4 examples!
  Check referer encoding, and/or maching referer.
@@ -31,10 +31,6 @@ package SF_form_secure;
  Please Report all Bugs and report if all go's well!
 
 =head1 IMPROVEMENTS
-
- v2.1 - 10/22/2006 08:53:47
- Fixed version Time made in COPYLEFT and IMPROVEMENTS, to propper time.
- Fixed DESCRIPTION and SYNOPSIS Text to reflect current script.
 
  v2.0 - 10/22/2006 10:30:55
  Better regular expression for "# Security issue 3".
@@ -79,6 +75,7 @@ package SF_form_secure;
  -------------------------------------------------------------------------------
 
  This makes encoded links for the next page
+ Link encoding made expire in 10 min.
  1 - is the action type
  $key - Must Provide a secret key.
  'op=testForm2;module=Flex_Form' - The link to encode
@@ -94,6 +91,7 @@ package SF_form_secure;
  -------------------------------------------------------------------------------
 
  Full Security - To get to this area the referer must match the one given, the incoming link and past referer encoding must be correct.
+ All encodings used expires in 10 min.
  2 - is the action type
  $key - Must Provide a secret key.
  1 - Check Referer encoding and date expires, Blank is off
@@ -109,6 +107,7 @@ package SF_form_secure;
  -------------------------------------------------------------------------------
 
  Medium Security 1 - To get to this area the referer must match the one given and incoming link encoding must be correct.
+ All encodings used expires in 10 min.
  2 - is the action type
  $key - Must Provide a secret key.
  3 -  1 Check Referer encoding, 2 Check link encoding, 3 Check Both, Blank is off
@@ -124,6 +123,7 @@ package SF_form_secure;
  -------------------------------------------------------------------------------
 
  Medium Security 2 - To get to this area the referer encoding and incoming link encoding must be correct.
+ All encodings used expires in 10 min.
  2 - is the action type
  $key - Must Provide a secret key.
  1 -  1 Check Referer encoding, 2 Check link encoding, 3 Check Both, Blank is off
@@ -139,6 +139,7 @@ package SF_form_secure;
  -------------------------------------------------------------------------------
 
  Low Security - To get to this area the incoming link encoding must be correct.
+ All encodings used expires in 10 min.
  2 - is the action type
  $key - Must Provide a secret key.
  2 -  1 Check Referer encoding, 2 Check link encoding, 3 Check Both, Blank is off
